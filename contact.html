@@ -322,36 +322,128 @@
           
 
             <!-- Contact Form -->
-            <div class="col-lg-6 col-md-6">
-                <div class="contact-form">
-                    <form id="contactForm" action="https://formspree.io/f/xrbqjllb" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" required placeholder="Your Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" required placeholder="Your Email">
-                        </div>
-                        <div class="form-group">
-                            <select name="service" class="form-control custom-dark-select" required>
-                                <option value="" disabled selected>Select a service</option>
-                                <option value="web_design">Web Design - Modern responsive websites</option>
-                                <option value="branding">Branding - Logo, brand identity, etc.</option>
-                                <option value="seo">SEO - Improve Google ranking</option>
-                                <option value="social_media">Social Media - Content & ad management</option>
-                                <option value="other">Other - Custom services</option>
-                              </select>
-                              
-                        
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" class="form-control" rows="6" required placeholder="Describe what you want..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="default-btn"><span>Submit Request</span><i class='bx bx-send'></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+       <style>
+  .custom-select {
+    position: relative;
+    width: 100%;
+  }
+
+  .custom-select-trigger {
+    width: 100%;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .custom-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    background: #000;
+    border: 1px solid #444;
+    z-index: 1000;
+    display: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+
+  .custom-option {
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .custom-option:hover {
+    background-color: #333;
+  }
+
+  .custom-select.open .custom-options {
+    display: block;
+  }
+</style>
+
+<div class="col-lg-6 col-md-6">
+  <div class="contact-form">
+    <form id="contactForm" action="https://formspree.io/f/xrbqjllb " method="POST">
+      <div class="form-group">
+        <input type="text" name="name" class="form-control" required placeholder="Your Name">
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" class="form-control" required placeholder="Your Email">
+      </div>
+
+      <!-- CUSTOM SELECT DROPDOWN -->
+      <div class="form-group custom-select" id="customSelect">
+        <!-- Fake Trigger -->
+      
+
+        <!-- Hidden Real Select for Formspree -->
+        <select name="service" required style="display:none;">
+          <option value="">Select a service</option>
+          <option value="web_design">Web Design - Modern responsive websites</option>
+          <option value="branding">Branding - Logo, brand identity, etc.</option>
+          <option value="seo">SEO - Improve Google ranking</option>
+          <option value="social_media">Social Media - Content & ad management</option>
+          <option value="other">Other - Custom services</option>
+        </select>
+
+        <!-- Custom Options -->
+        <div class="custom-options">
+          <div class="custom-option" data-value="web_design">Web Design</div>
+          <div class="custom-option" data-value="branding">Branding</div>
+          <div class="custom-option" data-value="seo">SEO</div>
+          <div class="custom-option" data-value="social_media">Social Media</div>
+          <div class="custom-option" data-value="other">Other</div>
+        </div>
+      </div>
+      <!-- END CUSTOM SELECT -->
+
+      <div class="form-group">
+        <textarea name="message" class="form-control" rows="6" required placeholder="Describe what you want..."></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="default-btn"><span>Submit Request</span><i class='bx bx-send'></i></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const selectBox = document.getElementById('customSelect');
+  const trigger = selectBox.querySelector('.custom-select-trigger');
+  const optionsContainer = selectBox.querySelector('.custom-options');
+  const realSelect = selectBox.querySelector('select');
+  const customOptions = selectBox.querySelectorAll('.custom-option');
+
+  // Toggle dropdown
+  trigger.addEventListener('click', () => {
+    selectBox.classList.toggle('open');
+  });
+
+  // Set selected value
+  customOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      trigger.textContent = option.textContent;
+      realSelect.value = option.getAttribute('data-value');
+      selectBox.classList.remove('open');
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!selectBox.contains(e.target)) {
+      selectBox.classList.remove('open');
+    }
+  });
+</script>
         </div>
     </div>
 </div>
