@@ -361,7 +361,7 @@ p:last-child {
 /*form-control*/
 .form-control {
   border-radius: 0;
-  background-color: #f5f5f5 !important;
+  background-color: #000000 !important;
   -webkit-box-shadow: unset !important;
           box-shadow: unset !important;
   -webkit-transition: var(--transition);
@@ -782,7 +782,7 @@ Hero Area 3 CSS
 }
 .hero-section-3 .cheatbox .form-control {
   height: 60px;
-  background-color: #ebeaea !important;
+  background-color: #000000 !important;
   border-radius: 5px;
 }
 
@@ -5906,6 +5906,7 @@ Login Page CSS
   background-color: #151526 !important;
   color: var(--whiteColor);
   height: 50px;
+
   margin-bottom: 25px;
   font-size: 14px;
 }
