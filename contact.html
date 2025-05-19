@@ -301,127 +301,138 @@
 
 
 <div class="contact-section pb-70">
-    <div class="container">
-      
-        <div class="row">
-            <!-- Contact Info -->
-            <div class="col-lg-6 col-md-6">
-                <div class="contact-info">
-                    <div class="contact-info-box">
-                        <i class="fi fi-tr-map-pin"></i>
-                        <h4>Plot no R-565 Sector 15A/2 Bufferzone North Nazimabad Karachi, Pakistan</h4>
-                        <span>Address</span>
-                    </div>
-                    <div class="contact-info-box">
-                        <i class="fi fi-tr-envelope-dot"></i>
-                        <h4><a href="mailto:admin@fuxioncreativs.com">admin@fuxioncreativs.com</a></h4>
-                        <span>Email</span>
-                    </div>
-                </div>
-            </div>
-          
-
-            <!-- Contact Form -->
-       <style>
-  .custom-select {
-    position: relative;
-    width: 100%;
-  }
-
-  .custom-select-trigger {
-    width: 100%;
-    padding: 10px;
-    background: #000;
-    color: #fff;
-    border: 1px solid #444;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    box-sizing: border-box;
-  }
-
-  .custom-options {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    max-height: 200px;
-    overflow-y: auto;
-    background: #000;
-    border: 1px solid #444;
-    z-index: 1000;
-    display: none;
-    box-sizing: border-box;
-    border-radius: 4px;
-  }
-
-  .custom-option {
-    padding: 10px;
-    color: #fff;
-    cursor: pointer;
-  }
-
-  .custom-option:hover {
-    background-color: #333;
-  }
-
-  .custom-select.open .custom-options {
-    display: block;
-  }
-</style>
-
-<div class="col-lg-6 col-md-6">
-  <div class="contact-form">
-    <form id="contactForm" action="https://formspree.io/f/xrbqjllb " method="POST">
-      <div class="form-group">
-        <input type="text" name="name" class="form-control" required placeholder="Your Name">
-      </div>
-      <div class="form-group">
-        <input type="email" name="email" class="form-control" required placeholder="Your Email">
-      </div>
-
-      <!-- CUSTOM SELECT DROPDOWN -->
-      <div class="form-group custom-select" id="customSelect">
-        <!-- Fake Trigger -->
-      
-
-        <!-- Hidden Real Select for Formspree -->
-        <select name="service" required style="display:none;">
-          <option value="">Select a service</option>
-          <option value="web_design">Web Design - Modern responsive websites</option>
-          <option value="branding">Branding - Logo, brand identity, etc.</option>
-          <option value="seo">SEO - Improve Google ranking</option>
-          <option value="social_media">Social Media - Content & ad management</option>
-          <option value="other">Other - Custom services</option>
-        </select>
-
-        <!-- Custom Options -->
-        <div class="custom-options">
-          <div class="custom-option" data-value="web_design">Web Design</div>
-          <div class="custom-option" data-value="branding">Branding</div>
-          <div class="custom-option" data-value="seo">SEO</div>
-          <div class="custom-option" data-value="social_media">Social Media</div>
-          <div class="custom-option" data-value="other">Other</div>
+  <div class="container">
+    <div class="row">
+      <!-- Contact Info -->
+      <div class="col-lg-6 col-md-6">
+        <div class="contact-info">
+          <div class="contact-info-box">
+            <i class="fi fi-tr-map-pin"></i>
+            <h4>Plot no R-565 Sector 15A/2 Bufferzone North Nazimabad Karachi, Pakistan</h4>
+            <span>Address</span>
+          </div>
+          <div class="contact-info-box">
+            <i class="fi fi-tr-envelope-dot"></i>
+            <h4><a href="mailto:admin@fuxioncreativs.com">admin@fuxioncreativs.com</a></h4>
+            <span>Email</span>
+          </div>
         </div>
       </div>
-      <!-- END CUSTOM SELECT -->
 
-      <div class="form-group">
-        <textarea name="message" class="form-control" rows="6" required placeholder="Describe what you want..."></textarea>
+      <!-- Contact Form -->
+      <style>
+        .custom-select {
+          position: relative;
+          width: 100%;
+        }
+
+        .custom-select-trigger {
+          width: 100%;
+          padding: 10px;
+          background: #000;
+          color: #fff;
+          border: 1px solid #444;
+          border-radius: 4px;
+          font-size: 16px;
+          cursor: pointer;
+          box-sizing: border-box;
+        }
+
+        .custom-options {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          max-height: 200px;
+          overflow-y: auto;
+          background: #000;
+          border: 1px solid #444;
+          z-index: 1000;
+          display: none;
+          box-sizing: border-box;
+          border-radius: 4px;
+        }
+
+        .custom-option {
+          padding: 10px;
+          color: #fff;
+          cursor: pointer;
+        }
+
+        .custom-option:hover {
+          background-color: #333;
+        }
+
+        .custom-select.open .custom-options {
+          display: block;
+        }
+
+        .form-success {
+          display: none;
+          color: limegreen;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+      </style>
+
+      <div class="col-lg-6 col-md-6">
+        <div class="contact-form">
+          <form id="contactForm" method="POST">
+            <div class="form-group">
+              <input type="text" name="name" class="form-control" required placeholder="Your Name">
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" required placeholder="Your Email">
+            </div>
+
+            <!-- CUSTOM SELECT DROPDOWN -->
+            <div class="form-group custom-select" id="customSelect">
+           
+
+              <!-- Hidden Real Select for Formspree -->
+              <select name="service" required style="display:none;">
+                <option value="">Select a service</option>
+                <option value="web_design">Web Design</option>
+                <option value="branding">Branding</option>
+                <option value="seo">SEO</option>
+                <option value="social_media">Social Media</option>
+                <option value="other">Other</option>
+              </select>
+
+              <div class="custom-options">
+                <div class="custom-option" data-value="web_design">Web Design</div>
+                <div class="custom-option" data-value="branding">Branding</div>
+                <div class="custom-option" data-value="seo">SEO</div>
+                <div class="custom-option" data-value="social_media">Social Media</div>
+                <div class="custom-option" data-value="other">Other</div>
+              </div>
+            </div>
+            <!-- END CUSTOM SELECT -->
+
+            <div class="form-group" style="padding-top: 60px;">
+              <textarea name="message" class="form-control" rows="6" required placeholder="Describe what you want..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="default-btn"><span>Submit Request</span><i class='bx bx-send'></i></button>
+            </div>
+
+            <!-- Success Message -->
+            <div id="formSuccess" class="form-success">Thank you! We've received your message.</div>
+          </form>
+        </div>
       </div>
-      <div class="form-group">
-        <button type="submit" class="default-btn"><span>Submit Request</span><i class='bx bx-send'></i></button>
-      </div>
-    </form>
+    </div>
   </div>
 </div>
 
 <script>
   const selectBox = document.getElementById('customSelect');
   const trigger = selectBox.querySelector('.custom-select-trigger');
-  const optionsContainer = selectBox.querySelector('.custom-options');
   const realSelect = selectBox.querySelector('select');
   const customOptions = selectBox.querySelectorAll('.custom-option');
+  const form = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
 
   // Toggle dropdown
   trigger.addEventListener('click', () => {
@@ -443,10 +454,39 @@
       selectBox.classList.remove('open');
     }
   });
+
+  // Handle form submission
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form behavior
+
+    const formData = new FormData(form);
+
+    fetch('https://formspree.io/f/xrbqjllb ', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        form.reset(); // Clear form
+        trigger.textContent = 'Select a service'; // Reset dropdown label
+        realSelect.value = ''; // Reset hidden select
+        formSuccess.style.display = 'block'; // Show success message
+      } else {
+        response.json().then(data => {
+          console.error("Formspree error:", data);
+          alert("Oops! There was a problem submitting the form.");
+        });
+      }
+    })
+    .catch(error => {
+      console.error("Fetch error:", error);
+      alert("Oops! There was a problem submitting the form.");
+    });
+  });
 </script>
-        </div>
-    </div>
-</div>
 
 <!-- End Contact Section -->
 
