@@ -377,7 +377,7 @@
 
       <div class="col-lg-6 col-md-6">
         <div class="contact-form">
-          <form id="contactForm" method="POST">
+         <form id="contactForm" method="POST" action="https://formspree.io/f/xrbqjllb " target="hidden_iframe">
             <div class="form-group">
               <input type="text" name="name" class="form-control" required placeholder="Your Name">
             </div>
@@ -457,33 +457,40 @@
 
   // Handle form submission
   form.addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default form behavior
+    e.preventDefault();
 
     const formData = new FormData(form);
+    const jsonObject = {};
+
+    // Convert FormData to plain object
+    formData.forEach((value, key) => {
+      jsonObject[key] = value;
+    });
 
     fetch('https://formspree.io/f/xrbqjllb ', {
       method: 'POST',
-      body: formData,
       headers: {
+        'Content-Type': 'application/json',
         'Accept': 'application/json'
-      }
+      },
+      body: JSON.stringify(jsonObject)
     })
     .then(response => {
       if (response.ok) {
-        form.reset(); // Clear form
-        trigger.textContent = 'Select a service'; // Reset dropdown label
-        realSelect.value = ''; // Reset hidden select
-        formSuccess.style.display = 'block'; // Show success message
+        form.reset();
+        trigger.textContent = 'Select a service';
+        realSelect.value = '';
+        formSuccess.style.display = 'block';
       } else {
-        response.json().then(data => {
-          console.error("Formspree error:", data);
+        return response.json().then(data => {
+          console.error("Formspree Error:", data);
           alert("Oops! There was a problem submitting the form.");
         });
       }
     })
     .catch(error => {
-      console.error("Fetch error:", error);
-      alert("Oops! There was a problem submitting the form.");
+      console.error("Fetch Error:", error);
+      alert("Network error — could not submit form.");
     });
   });
 </script>
